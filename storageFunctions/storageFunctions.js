@@ -1,10 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-/**
- * Сохраняет массив задач в AsyncStorage
- * @param tasks - Массив задач для сохранения
- */
+
 export const saveTasks = async (tasks) => {
   try {
     const jsonTasks = JSON.stringify(tasks);
@@ -18,10 +15,6 @@ export const saveTasks = async (tasks) => {
 
 
 
-/**
- * Загружает задачи из AsyncStorage
- * @returns Массив задач или пустой массив при ошибке
- */
 export const loadTasks = async () => {
   try {
     const jsonTasks = await AsyncStorage.getItem('@tasks');
@@ -40,7 +33,6 @@ export const addTask = async (task) => {
     await saveTasks(tasks);
   } catch (e) {
     console.error('Ошибка добавления задачи:', e);
-    // Дополнительная обработка ошибок при необходимости
   }
 };
 
