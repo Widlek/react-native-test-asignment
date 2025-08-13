@@ -9,7 +9,6 @@ export const saveTasks = async (tasks) => {
     console.log(tasks);
   } catch (e) {
     console.error('Ошибка сохранения задач:', e);
-    // Дополнительная обработка ошибок при необходимости
   }
 };
 
